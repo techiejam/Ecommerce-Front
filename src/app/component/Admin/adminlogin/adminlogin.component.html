@@ -1,0 +1,48 @@
+<!-- <p>login works!</p> -->
+
+<!-- one way binding -->
+
+<!-- Username :<input type="text" name="username" value={{username}}/><br>
+Paasword :<input type="password" name="password" value={{password}}/><br>  -->
+
+
+<!-- Event binding -->
+<!-- Username :<input type="text" name="username" value={{username}}/><br>
+Paasword :<input type="password" name="password" value={{password}}/><br>
+
+<button (click)="handlelogin()">Login</button> -->
+
+<!-- two way binding -->
+<app-adminmenu></app-adminmenu>
+<!-- <body [ngStyle]="{'background':'url(https://wallpapercave.com/wp/wp9764014.jpg)'}"></body> -->
+<div class="logbgi">
+<pre>
+
+
+</pre>
+<div class="container" >
+    
+    <div class="row justify-content-center ">
+        <div class="col-md-5 border p-5" >
+            <form class="w-100 h-100">
+                <h1 class="text-center">Admin Login</h1>
+                <pre>
+                </pre>
+                <label>Enter UserName </label><br>
+                <input class="form-control" type="text" name="username" [(ngModel)]="username" /><br>
+                <label>Enter Password</label><br>
+                <input class="form-control" type="password" name="password"  [(ngModel)]="password"/><br>
+                <div class="text-center">
+                <button (click)="handlelogin()" class="btn btn-success ">Login</button><br>
+            </div>
+            </form>
+                
+        </div>
+    </div>
+   
+    
+    
+</div>
+</div>
+
+

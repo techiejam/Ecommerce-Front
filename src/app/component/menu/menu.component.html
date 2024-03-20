@@ -1,0 +1,33 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div>
+             <i class='fas fa-shipping-fast Color-white'  style='font-size:24px '></i>
+           <strong><a class="navbar-brand text-white" >E-Comm</a></strong>
+        </div>
+
+            <ul class="navbar-nav">
+                <!-- <li><a  routerLink="/login" class ="nav-link">Login</a></li> -->
+            
+               
+               <!-- <li>
+                <div class="search-container">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit" (click)="searchprod()"><i class="fa fa-search">Search</i></button>
+                    </form>
+                  </div>
+                </li> -->
+            </ul>
+        
+      <!-- login logout  -->
+      <ul class="navbar-nav navbar-collapse justify-content-end">
+        <li>
+          
+            <a  *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/profile/{{accountId}}"  class="nav-link"><i class='fas fa-user-circle '  style='font-size:24px;color: black;'></i></a>
+        </li>
+        <li>
+            <a *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link " ><i class="fas fa-sign-out-alt" style='font-size:24px ;color: rgb(255, 255, 255);'></i></a>
+        </li>
+    </ul> 
+    </nav>
+</header>

@@ -1,0 +1,54 @@
+<div class="bg">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5 border p-4 mt-3 ">
+    <form (ngSubmit)="!createForm.invalid && saveaccount(create.accountPassword,create.accountEmail,create.accountPhone)" #createForm="ngForm">
+       <fieldset class="form-group">
+ <label>First Name</label> <label style="color: red;">*</label>
+ <input type="text" placeholder="Enter your firstname" class="form-control" #firstName="ngModel"  [(ngModel)]="create.firstName"   (input)="firstnamevalid($event)" name="firstName" required="required" minlength="2" maxlength="25"/>
+ <span class="text-danger font-weight-bold" *ngIf="!isFirstNameValid ">Please Enter Valid FirstName </span>
+</fieldset>
+ <fieldset class="form-group">
+ <label>Last Name</label><label style="color: red;">*</label>
+ <input type="text" placeholder="Enter your lastname" class="form-control" #lastName="ngModel"  [(ngModel)]="create.lastName" (input)="lastnamevalid($event)" name="lastName" required="required" maxlength="10"/>
+ <span class="text-danger font-weight-bold"  *ngIf="!isLastNameValid">Please Enter Valid LastName</span> 
+</fieldset>
+ <fieldset class="form-group">
+ <label for="email">Email Id</label> <label style="color: red;">*</label>
+ <input type="email" class="form-control" placeholder="Enter the email id" #email="ngModel" (input)="emailvalid($event)"  [(ngModel)]="create.accountEmail" email="true" name="email" required="required" maxlength="45"/>
+ <span class="text-danger font-weight-bold" *ngIf="!emailValid">Please Enter Valid EmailId</span> 
+</fieldset>
+ <fieldset class="form-group">
+ <label>Mobile Number</label><label style="color: red;">*</label>
+ <input type="text" class="form-control" #number="ngModel" placeholder="**********" (input)="mobileValid($event)" [(ngModel)]="create.accountPhone" name="number" required="required" minlength="10" maxlength="10"/>
+ <span class="text-danger font-weight-bold" *ngIf="!isMobileValid">Please Enter Valid PhoneNumber</span> 
+</fieldset>
+<fieldset class="form-group">
+  <label>What's Your Favourite?</label> <label style="color: red;">*</label>
+  <input type="text" placeholder="food name/rolemodel name/color/number" class="form-control" #firstName="ngModel"  [(ngModel)]="create.favourite"   (input)="favouritevalid($event)" name="favourite" required="required" minlength="1" maxlength="40"/>
+  <span class="text-danger font-weight-bold" *ngIf="!isFavouriteValid ">Please Fill This Column </span>
+ </fieldset>
+<fieldset class="form-group">
+<label>Address</label> <label style="color: red;">*</label>
+   
+<input type="text " class="form-control" #address="ngModel" (input)="addressValid($event)" [(ngModel)]="create.address"  name="address" minlength="15" required="required" >
+
+<span class="text-danger font-weight-bold" *ngIf="!isAddressValid">Please Enter Valid Address</span> 
+   </fieldset>
+ <fieldset class="form-group">
+ <label>Password</label> <label style="color: red;">*</label>
+ <input type="password" class="form-control" placeholder="Include special characters at middle(eg:SPMG@$&123)" (input)="passwordValid($event)" #password="ngModel" [(ngModel)]="create.accountPassword" name="password" required="required"  maxlength="15"/>
+ <span class="text-danger font-weight-bold" *ngIf="!isPasswordValid">Please Enter Valid Password</span> 
+</fieldset>
+ <fieldset class="form-group">
+ <label>Confirm Password</label> <label style="color: red;">*</label>
+ <input type="text" class="form-control" [(ngModel)]="cpass" (input)="cPasswordValid($event)" name="confirmpassword" />
+ <span class="text-danger font-weight-bold" *ngIf="!isPasswordValid">Please Enter Same Password</span> 
+</fieldset>
+ 
+ <button  type="submit" [disabled]="disableSubmit" class="btn btn-success" >Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>

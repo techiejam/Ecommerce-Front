@@ -1,0 +1,103 @@
+<header class="header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+       <div>
+        
+       <!-- <strong><a class="navbar-brand text-white">SPMG</a></strong> -->
+            <i class='fas fa-shipping-fast  Color-white' style='font-size:40px'> </i>
+            <strong style="color: white; font-size: xx-large;">&nbsp;Welcome,{{firstName}}</strong>
+
+            
+        </div>
+<pre>                                </pre>
+        <div class="formgroup"    >
+           <input class="form-control" type="text" placeholder="Search here" name="product" [(ngModel)]="pname" />
+            
+        </div>
+        <div><button (click)="searchprod()" class="btn btn-warning"><i class="fas fa-search" style='font: size 30px '></i></button></div>
+        
+        
+        
+      <!-- login logout  -->
+      <ul class="navbar-nav navbar-collapse justify-content-end"> 
+        <li>
+            
+            <div class="cart"><a  *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/cart/{{accountId}}" class="nav-link " ><i class="fas fa-shopping-cart" style="font-size:24px; color:black;"></i></a>
+            </div>
+            <div class="hide">Cart</div></li>
+        <li>
+           <div class="history"> <a *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/history/{{accountId}}" class="nav-link " ><i class="fas fa-history" style='font-size:24px;color: rgb(255, 255, 255); '></i></a>
+        </div>
+        <div class="hide1">History</div>
+        </li>
+        <li>
+           <div class="profile"><a  *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/profile/{{accountId}}"  class="nav-link"> <i class='fas fa-user-circle'  style='font-size:24px;color: black;'></i></a>
+        </div>
+        <div class="hide2">Profile</div>
+        </li>
+        <li>
+           <div class="logout"> <a *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link " ><i class="fas fa-sign-out-alt" style='font-size:24px;color: white; '></i></a>
+        </div>
+        <div class="hide3">Logout</div>
+        </li>
+    </ul> 
+    </nav>
+</header>
+<header class="header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-white">
+       <div class="move" >
+        
+       <!-- <strong><a class="navbar-brand text-white">SPMG</a></strong> -->
+            <!-- <i class='fas fa-shipping-fast  Color-white' style='font-size:40px'> </i> -->
+            <button  (click)="allproducts()" class="btn btn-warning">All</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="menProducts()" class="btn btn-warning">Men</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="womenProducts()" class="btn btn-warning">Women</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="electronicProducts()" class="btn btn-warning">Electronics</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="kidsProducts()" class="btn btn-warning">Kids</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="footwearProducts()" class="btn btn-warning">FootWear</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="groceryProducts()" class="btn btn-warning">Grocery</button>
+           
+            <!-- <strong style="color: white; font-size: xx-large;">&nbsp;Welcome,{{firstName}}</strong> -->
+
+            
+        </div>
+  
+    </nav>
+</header>
+
+
+<div>
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-3"><br>
+            <table class="table table-hover table-bordered">
+           <tr><td> <img src="https://m.media-amazon.com/images/I/610YShD8jeL._AC_SY606_.jpg" class="rounded" style="width:200px;height:300px;"></td></tr>
+          <tr> <td><p>Price:414.00 <br>
+        </table>
+        </div>
+    </div>
+</div>
+</div> -->
+
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let category of prodlist">
+            <div class="item col-md-3"><br>
+
+                <img (click)="viewprod(category.productId)" src="{{category.link}}" alt="img">
+        
+                <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">
+                    {{category.productName}}</h5>
+                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">Brand:{{category.productBrand}}</p>
+                <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">Price: &#x20b9;{{category.productPrice}}/-</p>
+
+               
+                <button class="btn btn-primary" (click)="viewprod(category.productId)">VIEW PRODUCT</button>
+             </div>
+        </ng-container>
+        
+    </div>
+</div>
+

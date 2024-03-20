@@ -1,0 +1,105 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div>
+
+            <button (click)="back()" class="btn btn-link"><i class='fas fa-angle-left' style='font-size:24px; color:black;'> </i></button>
+            <i class='fas fa-shipping-fast Color-white'  style='font-size:24px '></i>
+           <strong><a class="navbar-brand text-white" > E-Comm</a></strong>
+        </div>
+
+           
+        
+      <!-- login logout  -->
+      <ul class="navbar-nav navbar-collapse justify-content-end">
+        <li>
+            <button (click)="home()" class="btn btn-link"><i class="fas fa-home" style='font-size:24px; color:black;'> </i></button>
+        </li>
+        <li>
+           
+            <a  *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/profile/{{accountId}}"  class="nav-link"> <i class='fas fa-user-circle '  style='font-size:24px;color: black;'></i></a>
+        </li>
+        <li>
+            <a *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link " ><i class="fas fa-sign-out-alt" style='font-size:24px;color: rgb(255, 255, 255); '></i></a>
+        </li>
+    </ul> 
+    </nav>
+</header>
+
+
+<div class="container">
+<div class="row justify-content-center">
+    
+<table  cellspacing="2" >
+    <thead>
+        <tr>
+            <th rowspan="15"><img src="{{catogored.link}}" alt="img"><pre>
+
+            </pre></th>
+            <th ><H1>{{catogored.productName}}</H1></th><br>
+            </tr>
+            <tr><td>
+                <p style="color: red;">(click profile to change your delivery address)</p>
+                <fieldset>
+                    
+               <legend >Deliver To</legend>
+                <h2>{{created.firstName}} {{created.lastName}}</h2>
+                <p>{{created.address}}</p>
+                <p><b>Mobile:</b>{{created.accountPhone}}</p>
+            </fieldset>
+            </td></tr>
+                    <tr><td><B>ABOUT:</B> {{catogored.productAbout}}</td></tr>
+                    <tr><td><B>PRICE:</B>&#x20b9;{{catogored.productPrice}}/-</td></tr>
+                    <TR><TD><b>QUANTITY:</b>{{quantity}} X {{catogored.productPrice}}</TD></TR>
+                   <tr><td><B>TOTAL AMOUNT :</B>&#x20b9;{{total}}/-</td></tr>
+
+                   <tr><td><b>SELECT YOUR PAYMENT OPTION:</b>
+                    <select name="Pay" id="pay" (change)="card($event)">
+                        <option value="cod">Cash on Delivery</option>
+                        <option  value="upi">UPI Payment</option>
+                        <option  value="cards">Credit/Debit Card</option>
+                    </select>
+                </td></tr>
+        
+
+               <br> <ng-container *ngIf="show">
+                    <div style="margin: 0 auto;text-align: left;">
+                        <div>
+                            <label style="color: rgb(7, 89, 241);"  ><b>CARD DETAILS</b></label><br>
+                            <label>Card Number:</label>
+                            <div><input placeholder="xxxx xxxx xxxx xxxx" type="text" id="tbname" name="yourname" [(ngModel)]="bank.cCardnumber" (input)="checkcards($event)" minlength="16" maxlength="16" required="required"/></div>
+                            <span class="text-danger font-weight-bold" *ngIf="!isCardValid">Please Enter Valid Card Number</span>
+                        </div>
+                        <div>
+                            <label>CVV</label>
+                            <div><input placeholder="XXX" type="text" minlength="3" maxlength="3" [(ngModel)]="bank.cCvvnumber" (input)="checkcvv($event)" required="required"/></div>
+                            <span class="text-danger font-weight-bold" *ngIf="!isCvvValid">Please Enter Valid CVV</span>
+                        </div>
+                            <div>
+                                <label>ExpiryDate</label>
+                                <div><input  type="date" [(ngModel)]="bank.expiryDate" (input)="checkdate($event)" required="required"/></div>
+                                <span class="text-danger font-weight-bold" *ngIf="!isDateValid">Please Enter Valid Date</span>
+                            </div>     
+                          </div>  
+                    
+                </ng-container>
+                <ng-container *ngIf="shows">
+                    <div style="margin: 0 auto;text-align: left;">
+                        <div>
+                            <label style="color: rgb(7, 89, 241);"  ><b>UPI ID</b></label><br>
+                            
+                            <div><input placeholder="abc@oksbi" type="text" id="tbname" name="yourname" [(ngModel)]="bank.cUpi" (input)="checkupi($event)" minlength="16" maxlength="25" required="required"/></div>
+                            <span class="text-danger font-weight-bold" *ngIf="!isUpiValid">Please Enter Valid UPI</span>
+                        </div>
+                    </div>
+                </ng-container><br>
+
+                  <!-- <nav><tr><td class="navbar-collapse"> {{catogored.productQuantity}}</td></tr> </nav> -->
+<tr>
+    <button type="submit" [disabled]="c" (click)="order(catogored.productQuantity,catogored.productId,bank.cUpi,bank.cCardnumber,bank.cCvvnumber,bank.expiryDate)" class="btn btn-warning">Place Order</button>
+</tr>
+        
+    </thead>
+</table>
+</div>
+</div>
+

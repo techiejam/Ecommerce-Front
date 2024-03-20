@@ -1,0 +1,16 @@
+<app-adminmenu></app-adminmenu><br><br><br>
+<table class="table table-bordered ">
+    <div class="row justify-content-center">
+    <div class="col-md-4 border p-5" >
+    
+            <th align="center"> DETAILS OF ID - {{finds.accountId}}</th>
+           <tr><td> <b>FULL NAME:</b>{{finds.firstName}} {{finds.lastName}}</td></tr>
+            <tr><td><B>EMAILID:</B>{{finds.accountEmail}}</td></tr>
+            <tr><td><B>CONTACTNUMBER:</B>{{finds.accountPhone}}</td></tr>
+            <tr><td><B>ADDRESS:</B>{{finds.address}}</td></tr>
+            <tr><td><B>ACCOUNT CREATED ON:</B>{{finds.accountCreatedDate | date}}</td></tr>
+        
+
+    </div>
+    </div>
+</table>

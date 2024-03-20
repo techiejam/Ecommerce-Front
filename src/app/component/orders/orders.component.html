@@ -1,0 +1,98 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+      <div>
+        
+           <i class='fas fa-shipping-fast Color-white'  style='font-size:24px '></i>
+         <strong><a class="navbar-brand text-white" >E-Comm</a></strong>
+      </div>
+
+          <ul class="navbar-nav">
+              <!-- <li><a  routerLink="/login" class ="nav-link">Login</a></li> -->
+          
+             
+             <!-- <li>
+              <div class="search-container">
+                  <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit" (click)="searchprod()"><i class="fa fa-search">Search</i></button>
+                  </form>
+                </div>
+              </li> -->
+          </ul>
+      
+    <!-- login logout  -->
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <li>
+         
+          <a  *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/profile/{{accountId}}"  class="nav-link"> <i class='fas fa-user-circle '  style='font-size:24px;color: black;'></i></a>
+      </li>
+      <li>
+          <a *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link " ><i class="fas fa-sign-out-alt" style='font-size:24px;color: rgb(255, 255, 255); '></i></a>
+      </li>
+  </ul> 
+  </nav>
+</header>
+<div class="bg">
+<pre>                                                                          <button  type="submit" (click)="tohistory()" class="btn btn-success" >CLICK HERE TO CONTINUE</button></pre>
+  <p><b>THANK YOU FOR YOUR ORDER. WE HOPE TO SEE YOU AGAIN SOON!!!</b></p>
+       
+                  <div  class="hide">    
+            
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.caccid" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.cmailPhonenumber" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.category" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productName" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productType" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productPrice" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productQuantity" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productSize" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productBrand" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.material" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productWeight" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.gender" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productColor" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productSpecifications" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productAbout" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.productSelflife" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.totalAmount" name="accountId" />
+        </fieldset>
+        <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="customer.imgLink" name="accountId" />
+        </fieldset>
+      </div>
+        
+    </div>
+

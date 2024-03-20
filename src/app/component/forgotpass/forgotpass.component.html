@@ -1,0 +1,55 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div>
+          <button (click)="back()" class="btn btn-link"><i class='fas fa-angle-left' style='font-size:24px; color:black;'> </i></button>
+             <i class='fas fa-shipping-fast Color-white'  style='font-size:24px '></i>
+           <strong><a class="navbar-brand text-white" > E-Comm</a></strong>
+        </div>
+
+            <ul class="navbar-nav">
+                <!-- <li><a  routerLink="/login" class ="nav-link">Login</a></li> -->
+            
+               
+               <!-- <li>
+                <div class="search-container">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit" (click)="searchprod()"><i class="fa fa-search">Search</i></button>
+                    </form>
+                  </div>
+                </li> -->
+            </ul>
+        
+      <!-- login logout  -->
+      
+    </nav>
+</header>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5 border p-4 mt-3 ">
+   
+            <label for="email">Email Id/MobileNumber</label><label style="color: red;">*</label>
+            <input type="email" class="form-control" placeholder="Enter the email id" #email="ngModel" (input)="emailvalid($event)"  [(ngModel)]="accountEmail" email="true" name="email" required="required" maxlength="25"/>
+            <span class="text-danger font-weight-bold" *ngIf="!emailValid">Please Enter Valid EmailId</span> <br>
+           
+            <label for="email">What's Your Favourite?</label><label style="color: red;">*</label>
+            <input type="email" class="form-control" placeholder="food/rolemodel/color/number" #email="ngModel" (input)="favouritevalid($event)"  [(ngModel)]="favourite"  name="favourite" required="required" minlength="1" maxlength="25"/>
+            <span class="text-danger font-weight-bold" *ngIf="!isFavouriteValid">Please Fill This Field</span> <br>
+           
+
+          <label>New Password</label><label style="color: red;">*</label>
+          <input type="password" class="form-control" placeholder="NEW PASSWORD:Abc@3" (input)="passwordValid($event)" #password="ngModel" [(ngModel)]="accountPassword" name="password" required="required" minlength="8" maxlength="15"/>
+          <span class="text-danger font-weight-bold" *ngIf="!isPasswordValid">Please Enter Valid Password(password should contain atleast one special character)</span> <br>
+         
+         
+          <label>Confirm Password</label><label style="color: red;">*</label>
+          <input type="text" class="form-control" [(ngModel)]="cpass" (input)="passwordValid($event)" name="confirmpassword" />
+          <span class="text-danger font-weight-bold" *ngIf="!isPasswordValid">Please Enter Same Password</span> <br>
+
+   <button type="button" (click)="updatepass()" class="btn btn-info">Save Changes</button>
+<!-- </form> -->
+</div>
+</div>
+</div> 

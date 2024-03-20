@@ -1,0 +1,96 @@
+
+<div class="bgi">
+<div class="container ">
+    
+    <div class="row justify-content-center">
+        <div class="col-md-5 border p-4 mt-3 ">
+            
+    <form (ngSubmit)="!categoryyForm.invalid && addproduct()" #categoryyForm="ngForm">
+        <span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty"></span>
+       <fieldset class="form-group">
+ <label>Category</label>
+ <input type="text" class="form-control" #category="ngModel" [(ngModel)]="categoryy.category" name="category" required="required" minlength="3" maxlength="20"/>
+ <span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && category.invalid">Please Enter Category</span> 
+ </fieldset>
+ <fieldset class="form-group">
+    <label>Product Name</label>
+    <input type="text" class="form-control" #productName="ngModel" [(ngModel)]="categoryy.productName" name="productName" required="required"/>
+    <span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productName.invalid">Please Enter ProductName</span> 
+    </fieldset>
+<fieldset class="form-group">
+<label>Product Type</label>
+<input type="text" class="form-control" #productType="ngModel" [(ngModel)]="categoryy.productType" name="productType" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productType.invalid">Please Enter ProductType</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Product Price</label>
+<input type="number" class="form-control" #productPrice="ngModel" [(ngModel)]="categoryy.productPrice" name="productPrice" min="1" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productPrice.invalid">Please Enter valid price</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Product Quantity</label>
+<input type="number" class="form-control" #productQuantity="ngModel" [(ngModel)]="categoryy.productQuantity" name="productQuantity" min="1" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productQuantity.invalid">Please Enter Valid Quantity</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Product Size</label>
+<input type="text" class="form-control" #productSize="ngModel" [(ngModel)]="categoryy.productSize" name="productSize" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productSize.invalid">Please Enter ProductSize</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Product Brand</label>
+<input type="text" class="form-control" #productBrand="ngModel" [(ngModel)]="categoryy.productBrand" name="productBrand" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productBrand.invalid">Please Enter ProductBrand</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Material</label>
+<input type="text" class="form-control" #material="ngModel" [(ngModel)]="categoryy.material" name="material" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && material.invalid">Please Enter Material</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Product Weight</label>
+<input  type="text" class="form-control" #productWeight="ngModel" [(ngModel)]="categoryy.productWeight" name="productWeight" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productWeight.invalid">Please Enter ProductWeight</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Product Flavour</label>
+<input type="text" class="form-control" #productFlavour="ngModel" [(ngModel)]="categoryy.productFlavour" name="productFlavour" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productFlavour.invalid">Please Enter ProductFlavour</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Gender</label>
+<input type="text" class="form-control" #gender="ngModel" [(ngModel)]="categoryy.gender" name="gender" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && gender.invalid">Please Enter Gender</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Product Color</label>
+<input type="text" class="form-control" #productColor="ngModel" [(ngModel)]="categoryy.productColor" name="productColor" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productColor.invalid">Please Enter ProductColor</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>Specification</label>
+<input type="text" class="form-control" #productSpecifications="ngModel" [(ngModel)]="categoryy.productSpecifications" name="productSpecifications" required="required"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productSpecifications.invalid">Please Enter Specification</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>About</label>
+<input type="text" class="form-control" #productAbout="ngModel" [(ngModel)]="categoryy.productAbout" name="productAbout" required="required" maxlength="255"/>
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productAbout.invalid">Please Enter ProductAbout</span> 
+</fieldset>
+<fieldset class="form-group">
+<label>ShelfLife</label>
+<input type="text" class="form-control" #productSelflife="ngModel" [(ngModel)]="categoryy.productSelflife" name="productSelflife" required="required"  />
+<span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && productSelflife.invalid">Please Enter ShelfLife</span> 
+</fieldset>
+<fieldset class="form-group">
+    <label>Link</label>
+    <input type="text" class="form-control" #link="ngModel" [(ngModel)]="categoryy.link" name="link" required="required"  />
+    <span class="text-danger font-weight-bold" *ngIf="categoryyForm.dirty && link.invalid">Please Enter Valid Link</span> 
+    </fieldset>
+
+ <button  type="submit"  class="btn btn-success" >Save</button>
+</form>
+</div>
+</div>
+</div>
+</div>

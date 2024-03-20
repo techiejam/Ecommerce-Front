@@ -1,0 +1,49 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
+        <div>
+            <button (click)="back()" class="btn btn-link"><i class='fas fa-angle-left' style='font-size:24px; color:black;'> </i></button>
+            <i class='fas fa-shipping-fast '  style='font-size:24px;color: rgb(2, 2, 2);'></i>
+            <a class="navbar-brand" style="color: rgb(255, 255, 255);"><b>E-Comm</b></a>
+        </div>
+        
+    
+      <ul class="navbar-nav navbar-collapse justify-content-end">
+        <li>
+            <div class="logout"> <a  routerLink="/adminlogin" class="nav-link " ><i class="fas fa-sign-out-alt" style='font-size:24px;color: white; '></i></a>
+         </div>
+         <div class="hide3">Logout</div>
+         </li>
+    </ul>  
+    </nav>
+</header>
+<div>
+    <table class="table table-hover table-bordered" >
+             <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>MobileNumber</th>
+                    <th>Address</th>
+                    <!-- <th>Password</th> -->
+                    <th>Delete</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr *ngFor="let account of accounts">
+                    <td>{{account.accountId}}</td>
+                    <td>{{account.firstName}}</td>
+                    <td>{{account.lastName}}</td>
+                    <td>{{account.accountEmail}}</td>
+                    <td>{{account.accountPhone}}</td>
+                    <td>{{account.address}}</td>
+                <!-- <td>{{account.accountPassword}}</td> -->
+                   <td> <div class="row">
+                    <button  (click)="deleteacc(account.accountId)"  class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                   </div></td>
+                </tr>
+             </tbody>
+         </table>
+     
+ </div>

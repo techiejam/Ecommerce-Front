@@ -1,0 +1,13 @@
+.bg{
+    background-image: url("https://as1.ftcdn.net/v2/jpg/07/14/01/88/1000_F_714018870_PeBvoRskEahzoSsRQjWv61WRz12QLtwV.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    background-attachment: fixed;
+    height:100%;
+     width: 100%;
+}
+.col-md-5
+{
+    background-color: rgba(255, 255, 255, 0.438);
+}

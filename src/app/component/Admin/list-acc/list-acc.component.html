@@ -1,0 +1,88 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary ">
+        <div>
+            <button (click)="back()" class="btn btn-link"><i class='fas fa-angle-left' style='font-size:24px; color:black;'> </i></button>
+            <i class='fas fa-shipping-fast '  style='font-size:24px;color: rgb(2, 2, 2);'></i>
+            <a class="navbar-brand" style="color: rgb(255, 255, 255);"><b>E-Comm</b></a>
+        </div>
+        <pre>                                                  </pre>
+        <div class="formgroup"    >
+           <input class="form-control" type="text" placeholder="Search here" name="product" [(ngModel)]="pname" />
+            
+        </div>
+        <div><button (click)="searchprod()" class="btn btn-warning"><i class="fas fa-search" style='font: size 30px '></i></button></div>
+        
+        
+        
+    
+      <ul class="navbar-nav navbar-collapse justify-content-end">
+        <li>
+            <div class="logout"> <a  routerLink="/adminlogin" class="nav-link " ><i class="fas fa-sign-out-alt" style='font-size:24px;color: white; '></i></a>
+         </div>
+         <div class="hide3">Logout</div>
+         </li>
+    </ul>  
+    </nav>
+</header>
+
+    <div>
+        <div class="row">
+            <button (click)="add()" class="btn btn-success">Add</button>
+     </div>
+    <table class="table table-hover table-bordered" >
+             <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Size</th>
+                    <th>Brand</th>
+                    <th>Material</th>
+                    <th>Weight</th>
+                    <th>Flavor</th>
+                    <th>Gender</th>
+                    <th>Color</th>
+                    <th>Specification</th>
+                    <th>About</th>
+                    <th>ShelfLife</th>
+                    <th>Link</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr *ngFor="let category of categories">
+                    <td>{{category.productId}}</td>
+                    <td>{{category.category}}</td>
+                    <td>{{category.productName}}</td>
+                    <td>{{category.productType}}</td>
+                    <td>&#x20b9;{{category.productPrice}}/-</td>
+                    <td>{{category.productQuantity}}</td>
+                    <td>{{category.productSize}}</td>
+                    <td>{{category.productBrand}}</td>
+                    <td>{{category.material}}</td>
+                    <td>{{category.productWeight}}</td>
+                    <td>{{category.productFlavour}}</td>
+                    <td>{{category.gender}}</td>
+                    <td>{{category.productColor}}</td>
+                    <td>{{category.productSpecifications}}</td>
+                    <td>{{category.productAbout}}</td>
+                    <td>{{category.productSelflife}}</td>
+                    <td><img src="{{category.link}}" alt="img"></td>
+                   <td > <div class="row">
+                    <button (click)="updateprod(category.productId)" class="btn btn-success"> <i class="fas fa-edit"></i></button>
+                   </div></td>
+                   <td> <div class="row">
+                    <button  (click)="deleteprod(category.productId)" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                   </div></td>
+                </tr>
+             </tbody>
+         </table>
+     
+ </div>
+ 
+    
+

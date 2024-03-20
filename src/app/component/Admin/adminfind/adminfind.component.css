@@ -1,0 +1,14 @@
+.bgi{
+    background-image: url("https://media.istockphoto.com/id/1367021514/vector/purple-mauve-watercolor-fluid-painting-vector-design-card.jpg?s=612x612&w=0&k=20&c=s5B2mMHPeoqQWX2Tx24Fu7gw6clMBdwDjuofY1dbbdQ=");
+   
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    height:100%;
+    width: 100%;
+    background-attachment: fixed;
+}
+.col-md-5 {
+    background-color:rgba(255, 255, 255, 0.473);
+
+}

@@ -1,0 +1,110 @@
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div>
+            <button (click)="back()" class="btn btn-link"><i class='fas fa-angle-left' style='font-size:24px; color:black;'> </i></button>
+
+             <i class='fas fa-shipping-fast Color-white'  style='font-size:24px '></i>
+           <strong><a class="navbar-brand text-white" > E-Comm</a></strong>
+        </div>
+
+            <ul class="navbar-nav">
+                <!-- <li><a  routerLink="/login" class ="nav-link">Login</a></li> -->
+            
+               
+               <!-- <li>
+                <div class="search-container">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit" (click)="searchprod()"><i class="fa fa-search">Search</i></button>
+                    </form>
+                  </div>
+                </li> -->
+            </ul>
+        
+      <!-- login logout  -->
+      <ul class="navbar-nav navbar-collapse justify-content-end">
+        <li>
+            <button (click)="home()" class="btn btn-link"><i class="fas fa-home" style='font-size:24px; color:blue;'> </i></button>
+        </li>
+        <li>
+            
+            <div class="cart"><a  *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/cart/{{accountId}}" class="nav-link " ><i class="fas fa-shopping-cart" style="font-size:24px; color:black;"></i></a>
+            </div>
+            <div class="hide">Cart</div>
+        </li>
+        <li>
+           
+            <a  *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/profile/{{accountId}}"  class="nav-link"> <i class='fas fa-user-circle '  style='font-size:24px;color: black;'></i></a>
+        </li>
+        <li>
+            <a *ngIf="hardcodeAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link " ><i class="fas fa-sign-out-alt" style='font-size:24px;color: rgb(255, 255, 255); '></i></a>
+        </li>
+    </ul> 
+    </nav>
+</header>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-3"><br>
+            <table class="table table-hover table-bordered">
+           <tr><td> <img src="https://m.media-amazon.com/images/I/610YShD8jeL._AC_SY606_.jpg" class="rounded" style="width:200px;height:300px;"></td></tr>
+          <tr> <td><p>Price:414.00 <br>
+        </table>
+        </div>
+    </div>
+</div>
+</div> -->
+
+
+  
+<table  cellspacing="2" >
+    <thead>
+        <tr>
+            <th rowspan="17"><img src="{{categorys.link}}" alt="img"></th>
+            <th ><H1>{{categorys.productName}}</H1></th>
+        </tr>
+
+                    <tr><td><B>TYPE:</B> {{categorys.productType}}</td></tr>
+                    <tr><td><B>SIZE:</B>{{categorys.productSize}}</td></tr>
+                    <tr><td><B>BRAND:</B>{{categorys.productBrand}}</td></tr>
+                    <tr><td><B>MATERIAL:</B>{{categorys.material}}</td></tr>
+                    <tr><td><B>WEIGHT:</B> {{categorys.productWeight}}</td></tr>
+                    <tr><td><B>FLAVOUR:</B> {{categorys.productFlavour}}</td></tr>
+                    <tr><td><B>GENDER:</B> {{categorys.gender}}</td></tr>
+                    <tr><td><B>COLOR:</B> {{categorys.productColor}}</td></tr>
+                    <tr><td><B>SPECIFICATIONS:</B> {{categorys.productSpecifications}}</td></tr>
+                    <tr><td><B>ABOUT:</B> {{categorys.productAbout}}</td></tr>
+                    <tr><td><B>SHELFLIFE:</B> {{categorys.productSelflife}}</td></tr>
+                    <tr><td><B>STOCKLEFT:</B> {{categorys.productQuantity}}</td></tr>
+                    <tr><td><B>PRICE :</B> &#x20b9;{{categorys.productPrice}}/-</td></tr> 
+                     
+                         
+<tr><td><B>QUANTITY:</B> <input type="number" name="product"  [(ngModel)]="qun" min="0"  max="{{categorys.productQuantity}}"/></td></tr>
+<TR>
+    <pre><button type="submit" (click)="buynowfunc(categorys.productId,categorys.productPrice,categorys.productQuantity)" class="btn btn-warning">Buynow</button> <button type="button" (click)="cartsave(cart.accountId,cart.productId)" class="btn btn-info">AddtoCart</button>  </pre>
+</TR>
+<div class="hide">
+<fieldset>
+    <input type="text" class="form-control" [(ngModel)]="cart.productId" name="accountId" />
+    </fieldset>
+    <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="cart.imgLink" name="accountId" />
+        </fieldset>
+    <fieldset>
+        <input type="text" class="form-control" [(ngModel)]="cart.productName" name="accountId" />
+        </fieldset>
+        <fieldset>
+            <input type="text" class="form-control" [(ngModel)]="cart.productBrand" name="accountId" />
+            </fieldset>
+            <fieldset>
+                <input type="text" class="form-control" [(ngModel)]="cart.productQuantity" name="accountId" />
+                </fieldset>
+            <fieldset>
+                <input type="text" class="form-control" [(ngModel)]="cart.productPrice" name="accountId" />
+                </fieldset>
+            </div>
+    </thead>
+</table>
+
+
